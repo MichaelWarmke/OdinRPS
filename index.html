@@ -1,0 +1,42 @@
+<html>
+    <script>
+        var inputOptions = Array("rock", "paper", "scissors");    
+        var rounds = 5;
+
+        function computerPlay() { 
+            return inputOptions[Math.floor(Math.random()*inputOptions.length)];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            let doesPlayerWin = inputOptions.indexOf(computerSelection.toLowerCase()) == (inputOptions.indexOf(playerSelection.toLowerCase()) - 1);
+
+            if(doesPlayerWin) {
+                return `You Win! ${playerSelection} beats ${computerSelection}`;
+            } else {
+                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+            }
+        }
+
+        function game() {
+            let playerScore = 0;
+
+            for (round = 1; round < rounds + 1; round++) {
+                    
+                console.log(`Round: ${round}`)
+                let userInput = prompt("input: ");
+
+                let outcome = playRound(userInput, computerPlay());
+                
+                if (outcome.startsWith("You Win!")) () => playerScore++;    
+
+                console.log(outcome);
+            }
+
+            if(playerScore > rounds/2) {
+                console.log("You win the Game")
+            } else {
+                console.log("You lose the Game")
+            }
+        }
+    </script>
+</html>
