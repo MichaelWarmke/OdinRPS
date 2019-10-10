@@ -1,42 +1,33 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="./style/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <span id="heading">
+                <h1>Score</h3>
+                <span>
+                    <h2 class="inline">player: </h2>
+                    <h2 class="inline" id="playerScore">0</h2>
+                </span>
+                <span>
+                    <h2 class="inline">opponent: </h2>
+                    <h2 class="inline" id="oppScore">0</h2>
+                </span>
+            </span>
+            <div id="gameMessages"></div>
+            <div id="gameBar">
+                <img id="rock" class="gameOption" src="./images/rock-icon-png-13.jpg" alt="Rock" height="250px" width="250px"/>
+                <img id="paper" class="gameOption" src="./images/pngtree-paper-icon-image_1131168.jpg" alt="Paper" height="250px" width="250px"/>
+                <img id="scissors" class="gameOption" src="./images/101169471-scissors-icon-tool-of-barber-on-transparent-background-.jpg"
+                 alt="Scissors" height="250px" width="250px"/>
+            </div>
+        </div>
+    </body>
+    <script src="./game/RPSGame.js"></script>
+    <script src="./game/RPSController.js"></script>
     <script>
-        const inputOptions = Array("rock", "paper", "scissors");    
-        const rounds = 5;
-
-        function computerPlay() { 
-            return inputOptions[Math.floor(Math.random()*inputOptions.length)];
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            let doesPlayerWin = inputOptions.indexOf(computerSelection.toLowerCase()) == (inputOptions.indexOf(playerSelection.toLowerCase()) - 1);
-
-            if(doesPlayerWin) {
-                return `You Win! ${playerSelection} beats ${computerSelection}`;
-            } else {
-                return `You Lose! ${computerSelection} beats ${playerSelection}`;
-            }
-        }
-
-        function game() {
-            let playerScore = 0;
-
-            for (round = 1; round < rounds + 1; round++) {
-                    
-                console.log(`Round: ${round}`)
-                let userInput = prompt("input: ");
-
-                let outcome = playRound(userInput, computerPlay());
-                
-                if (outcome.startsWith("You Win!")) () => playerScore++;    
-
-                console.log(outcome);
-            }
-
-            if(playerScore > rounds/2) {
-                console.log("You win the Game")
-            } else {
-                console.log("You lose the Game")
-            }
-        }
+        addEventListeners();
+        startGame();
     </script>
 </html>

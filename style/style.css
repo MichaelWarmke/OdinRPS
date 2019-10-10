@@ -1,0 +1,33 @@
+
+#container {
+    background-color: lightgray;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+#playerScore {
+    margin-right: 25px;
+}
+
+#gameBar {
+    padding-top: 80px;
+    padding-bottom: 150px;
+}
+
+.gameOption {
+    border: solid black 3px;
+    border-radius: 20px;
+    transition: all .07s ease;
+    margin: 0 5px;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+  }
+
+.inline {
+    display: inline;
+}
