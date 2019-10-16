@@ -48,7 +48,7 @@ function newGame() {
 }
 
 function getGameState() {
-    return {Computer: computerScore, Player: playerScore};
+    return {Computer: computerScore, Player: playerScore, MatchWinner: matchWinner};
 }
 
 function isGameOver() {
