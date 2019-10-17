@@ -46,8 +46,21 @@ function addEventListeners() {
         let optionElement = document.querySelector(`#${option.id}`)
 
         optionElement.addEventListener('click', clickCallback);
+        optionElement.addEventListener('mousedown', toggleButtonEffect);
+        optionElement.addEventListener('mouseup', toggleButtonEffect);
+        optionElement.addEventListener('mouseenter', toggleButtonHover);
+        optionElement.addEventListener('mouseleave', toggleButtonHover);
     });
 
+
+}
+
+function toggleButtonEffect(event) {
+    event.target.classList.toggle("buttonEffect");
+}
+
+function toggleButtonHover(event) {
+    event.target.classList.toggle("buttonHover");
 }
 
 function removePlayingOptions() {
@@ -55,6 +68,10 @@ function removePlayingOptions() {
 
     playerOptions.forEach((option) => {
         option.removeEventListener('click', clickCallback);
+        option.removeEventListener('mousedown', toggleButtonEffect);
+        option.removeEventListener('mouseup', toggleButtonEffect);
+        option.removeEventListener('mouseenter', toggleButtonHover);
+        option.removeEventListener('mouseleave', toggleButtonHover);
     });
 }
 

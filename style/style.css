@@ -33,6 +33,14 @@
     margin: 0 5px;
 }
 
+.buttonHover {
+    box-shadow: 5px 5px #888888;
+}
+
+.buttonEffect {
+    box-shadow: 1px 10px 20px whitesmoke inset;
+}
+
 .playing {
     transform: scale(1.1);
     border-color: #ffc600;
